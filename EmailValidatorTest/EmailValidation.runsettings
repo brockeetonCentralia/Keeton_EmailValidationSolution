@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name="emptyEmail" value="" />
+		<Parameter name="userNameOverLimit" value="thisusernameaboutwillywonkawillbeoverthelimitoverthisusernameaboutwillywonkawillbeoverthelimitoverthelimitoverthelimitoverthelimitover@hotmail.com" />
+		<Parameter name="domainOverLimit" value="willywonka@thisdomainnameaboutwillywonkawillbeoverthelimitthisdomainnameaboutwillywonkawillbeoverthelimitthelimitthelimitthelimitthelimitthelimitthelimit.com" />
+		<Parameter name="noUserName" value="@hotmail.com" />
+		<Parameter name="noDomain" value="willywonka@.com" />
+		<Parameter name="spaceEmail" value="willy wonka@hotmail.com" />
+		<Parameter name="noDotEmail" value="willywonka@hotmailcom" />
+		<Parameter name="noAtEmail" value="willywonkahotmail.com" />
+		<Parameter name="DotBeforeAtEmail" value="willywonka.hotmail@com" />
+		<Parameter name="invalidCharEmail" value="willy*wonka@hotmail.com" />
+		<Parameter name="invalidCharAtEndEmail" value="willywonka@hotmail.com*" />
+		<Parameter name="validEmail1" value="willywonka@hotmail.com" />
+		<Parameter name="validEmail2" value="willy%wonka2@hotmail.com" />
+		<Parameter name="validEmail3" value="charlie$$bucket99@hotmail.com" />
+		<Parameter name="validEmail4" value="iwant@go1d3ng00se@hotmail.com" />
+		<Parameter name="validEmail5" value="augustus+gloop-1@hotmail.com" />
+		<Parameter name="validEmail6" value="ivegotagoldenticketyesido@hotmail.com" />
+		<Parameter name="validEmail7" value="a!b&amp;c^23@hotmail.com" />
+		<Parameter name="validEmail8" value="gpajoe.90@hotmail.com" />
+		<Parameter name="validEmail9" value="mama~buCKet@hotmail.com" />
+		<Parameter name="validEmail10" value="s=y}m{b?o'l$s@hotmail.com" />
+
+	</TestRunParameters>
+	<LoggerRunSettings>
+		<Loggers>
+			<Logger friendlyName="console" enabled="True">
+				<Configuration>
+					<Verbosity>quiet</Verbosity>
+				</Configuration>
+			</Logger>
+			<Logger friendlyName="trx" enabled="True">
+				<Configuration>
+					<LogFileName>foo.trx</LogFileName>
+				</Configuration>
+			</Logger>
+			<Logger friendlyName="html" enabled="True">
+				<Configuration>
+					<LogFileName>Keeton_Report.html</LogFileName>
+				</Configuration>
+			</Logger>
+		</Loggers>
+	</LoggerRunSettings>
+
+</RunSettings>
