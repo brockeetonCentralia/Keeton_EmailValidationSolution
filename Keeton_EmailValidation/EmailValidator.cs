@@ -10,26 +10,22 @@ namespace Keeton_EmailValidation
     {
         public static bool IsValidEmail(string email)
         {
-            string[] section = email.Split('@');
-            string username = section[0];
-            string charDomain = section[1];
-            string[] section2 = email.Split('.');
-            string domain = section2[1];
             int atIndex = email.IndexOf('@');
-            int dotIndex = email.IndexOf('.', atIndex);
-            string validChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~@!$%^&*_=+}{\\'?-.";
+            int dotIndex = email.LastIndexOf('.');    
+            string local = email.Substring(0, atIndex);
+            string domain = email.Substring(atIndex + 1); 
 
-            if (email == "")
+            if (string.IsNullOrEmpty(email))
             {
                 return false;
             }
 
-            if (username.Length > 100)
+            if (local.Length < 1 || local.Length > 100)
             {
                 return false;
             }
 
-            if (charDomain.Length > 100 || domain.Length < 3)
+            if (domain.Length > 100 || domain.Length < 3)
             {
                 return false;
             }
@@ -39,27 +35,24 @@ namespace Keeton_EmailValidation
                 return false;
             }
 
-            if (email.Contains("@") == false || email.Contains(".") == false)
+            if (!email.Contains('@'))
             {
                 return false;
             }
 
-            if (atIndex !> 0 && dotIndex !< atIndex)
+            if (dotIndex <= atIndex + 1 || dotIndex >= email.Length - 1)
             {
                 return false;
             }
 
-            if (char.IsLetter(email[0]) == false || char.IsLetter(email[email.Length - 1]) == false)
+            if (!char.IsLetterOrDigit(local[0]) || !char.IsLetterOrDigit(local[local.Length - 1]))
             {
                 return false;
             }
 
-            foreach (char c in email)
-            {
-                if (validChar.Contains(c) == false)
-                {
-                    return false;
-                }
+            if (!char.IsLetterOrDigit(domain[0]) || !char.IsLetterOrDigit(domain[domain.Length - 1])) 
+            { 
+                return false; 
             }
 
             return true;

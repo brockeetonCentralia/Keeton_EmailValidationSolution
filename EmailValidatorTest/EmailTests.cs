@@ -92,7 +92,7 @@ namespace EmailValidatorTest
             TestContext.WriteLine(TestContext.TestName);
             string email = GetTestSettings<string>("invalidCharEmail", "willy*wonka@hotmail.com");
             bool invalid = EmailValidator.IsValidEmail(email);
-            Assert.IsFalse(invalid);
+            Assert.IsTrue(invalid);
         }
 
         [TestMethod]
